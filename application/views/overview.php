@@ -92,171 +92,13 @@
 
 <body>
   <div class="body">
-	<header id="header" class="header-no-border-bottom" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 140, 'stickySetTop': '-100px', 'stickyChangeLogo': false}">
-      <div class="header-body">
-        <div class="header-container container">
-          <div class="header-row">
-            <div class="header-column">
-              <div class="header-logo">
-                <a href="#">
-                  <img alt="Len Rekaprima Semesta" width="120" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="<?php echo base_url('assets/img/lrs-logo.png') ?>">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header-container header-nav header-nav-center header-nav-bar header-nav-bar-primary">
-          <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
-            <i class="fa fa-bars"></i>
-          </button>
-        <div class="header-nav-main header-nav-main-light header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse" style="padding-top:3px;">
-          <nav>
-            <ul class="nav nav-pills" id="mainNav">
-              <li class="">
-                <a href="#">
-                  <i class="fa fa-home" style="font-size:25px;"></i>
-                </a>
-              </li>
-              <li class="dropdown dropdown-mega">
-              	<a href="#" class="dropdown-toggle">Profile</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Profile</b></h3>
-                        </div>
-                          <div class="col-md-3">
-                            <span class="dropdown-mega-sub-title"><h4>Profil Perusahaan</h4></span>
-                              <ul class="dropdown-mega-sub-nav">
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Siapa Kami</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Sejarah Len Rekaprima Semesta</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Visi &amp; Misi</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Struktur Organisasi</a></li>
-                              </ul>
-                          </div>
-                          <div class="col-md-3">
-                            <span class="dropdown-mega-sub-title"><h4>Pemimpin Kami</h4></span>
-                              <ul class="dropdown-mega-sub-nav">
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Dewan Direksi</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Dewan Komisaris</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Bisnis Kami</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Bisnis Kami</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Maintenance</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Signalling System</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Telecommunication System</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Traction System</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Interlocking System</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Systems</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                            </ul>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Lain-Lain</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Media</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Media</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Media Digital</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Energia Weekly</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Energia</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Galeri</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Infographic</a></li>
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Responsibility</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Responsibility</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Komitmen Kami</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Tanggung Jawab Perusahaan</a></li>
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Jobs</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Jobs</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Penerimaan Baru</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                              <li><a href="#" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Magang</a></li>
-                              <li><a href="#" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Lulusan Baru</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Tenaga Berpengalaman</a></li>
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <a href="#">News</a>
-              </li>
-              <li class="">
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-</header>
+
+  <!-- header -->
+  <?php $this->load->view('_includes/header.php') ?>
+  <!-- end header -->
+
+
+
 <div class="main" role="main">
   <div style="margin-bottom:80px">
     <div id="carousel-example-generic" class="carousel slide">
@@ -338,6 +180,11 @@
       </a>
     </div><!-- /.carousel -->
   </div><!-- /.container -->
+
+
+
+
+  
 <div class="container">
     <div class="row">
       <div class="col-md-12 center">
@@ -516,6 +363,10 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
       </div>
     </div>
   </div>
+
+
+
+  <!-- Crousel -->
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -531,43 +382,37 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
           </div>
         </div>
         <div class="owl-carousel owl-theme stage-margin" data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt1.jpg') ?>"></a>
+          
+          <!-- Maintenances -->
+          <?php
+          $data = $this->db->get('maintenances')->result();
+          foreach ($data as $maintenance) {
+          ?>
+          <div class="thumb-info custom-thumb-info-4"><a href="<?= $maintenance->link_maintenance ?>" target="_blank">
+            <img src="<?= $maintenance->gambar_maintenance ?>"></a>
           </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt2.jpg') ?>"></a>
+          <?php } ?>
+          <!-- End Maintenances -->
+        
+          <!-- Service -->
+          <?php
+          $data = $this->db->get('services')->result();
+          foreach ($data as $service) {
+          ?>
+          <div class="thumb-info custom-thumb-info-4"><a href="<?= $service->link_service ?>" target="_blank">
+            <img src="<?= $service->gambar_service ?>"></a>
           </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt3.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt4.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt5.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt6.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt7.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt8.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt9.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt10.jpg') ?>"></a>
-          </div>
-          <div class="thumb-info custom-thumb-info-4"><a href="#" target="_blank">
-            <img src="<?php echo base_url('assets/media/image/maintenance/mt11.jpg') ?>"></a>
-          </div>
+          <?php } ?>
+          <!-- End Service -->
+          
         </div>
       </div>
     </div>
   </div>
+<!-- End Crousel -->
+
+
+
 </div>
  <!----------------------------------------------------------------------------------------------------> 
   <section class="section section-no-background m-none">
@@ -576,46 +421,22 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
         <div class="col-md-4" data-wow-delay=".4s">
           <h2 class="mb-lg">PRESS <strong>RELEASE</strong></h2>
            <div class="table-container col-md-4" rules="rows">
+            <?php
+            $data = $this->db->get('news',5)->result();
+
+            foreach ($data as $news) {
+              # code...
+            
+            ?>
             <div class="recent-posts">
               <article class="post">
                 <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
+                  <span><i class="fa fa-calendar"></i> <?= $news->tgl_posting ?> </span>
                 </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
+                <h5><a href="<?= $news->slug ?>"><?= $news->judul ?></a></h5>
               </article>
             </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
+            <?php } ?>
           </div>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 welcome padding-left-none padding-bottom-40 scroll_effect fadeInUp">
@@ -649,24 +470,17 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
       </div>
     </div>
     <div class="row mt-lg">
+      <?php
+      $data = $this->db->get('clients')->result();
+      foreach ($data as $client) {        
+      ?>
       <div class="col-md-2">
-        <img src="<?php echo base_url('assets/media/image/partner/Angkasapura.png') ?>" class="img-responsive">
+        <img src="<?= $client->icon_client ?>" class="img-responsive">
       </div>
-      <div class="col-md-2">
-        <img src="<?php echo base_url('assets/media/image/partner/Direktoratkretaapi.png') ?>" class="img-responsive">
-      </div>
-      <div class="col-md-2">
-        <img src="<?php echo base_url('assets/media/image/partner/KAI.png') ?>" class="img-responsive">
-      </div>
-      <div class="col-md-2">
-        <img src="<?php echo base_url('assets/media/image/partner/LEN.png') ?>" class="img-responsive">
-      </div>
-      <div class="col-md-2">
-        <img src="<?php echo base_url('assets/media/image/partner/LRS.png') ?>" class="img-responsive">
-      </div>
-      <div class="col-md-2">
-        <img src="<?php echo base_url('assets/media/image/partner/akademiperkretaapian.png') ?>" class="img-responsive">
-      </div>
+      <?php
+      }
+      ?>
+
     </div>
   </div>
 </div>
