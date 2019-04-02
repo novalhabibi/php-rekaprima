@@ -1,3 +1,6 @@
+<?php
+$setting=$this->db->get('setting')->row();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +56,7 @@
     <!-- Theme Custom CSS -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css') ?>">
 
-	<title>Home | PT Len Rekaprima Semesta</title>
+	<title>Home | <?= $setting->title ?></title>
 	
 	<!-- Head Libs -->
   <script src="<?php echo base_url('assets/vendor/modernizr/modernizr.min.js') ?>"></script>
@@ -516,10 +519,15 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
       </div>
       <div class="col-md-3">
         <h5 class="mb-sm">Contact Us</h5>
-        <span class="phone">1 500 000</span>
+        <!-- Ambil data dari database -->
+        <?php 
+        $setting=$this->db->get('setting')->row();
+
+        ?>
+        <span class="phone"><?= $setting->no_telpon ?></span>
           <ul class="list list-icons mt-xl">
-            <li><i class="fa fa-map-marker"></i> <strong>Address :</strong> Jl. Soekarno Hatta No 293, Bandung 40235</li>
-            <li><i class="fa fa-envelope"></i> <strong>Email :</strong> <a href="#">it@lenrekaprima.co.id</a></li>
+            <li><i class="fa fa-map-marker"></i> <strong>Address :</strong><?= $setting->alamat ?></li>
+            <li><i class="fa fa-envelope"></i> <strong>Email :</strong> <a href="#"><?= $setting->email ?></a></li>
           </ul>
           <ul class="social-icons mt-xl">
             <li>
@@ -540,7 +548,7 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
         <div class="container">
           <div class="row">
             <div class="col-md-11">
-              <span class='copyright'>Copyright &copy; 2019 <a href="#">PT Len Rekaprima Semesta</a>. All rights reserved.</span>
+              <span class='copyright'>Copyright &copy; 2019 <a href="#"><?= $setting->title ?></a>. All rights reserved.</span>
             </div>
           </div>
         </div>
