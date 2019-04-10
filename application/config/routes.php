@@ -54,4 +54,61 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['admin']='BackendController';
+$route['dashboard']='BackendController';
+$route['auth/login']='AuthController/login';
+$route['auth/ceklogin']='AuthController/ceklogin';
+$route['auth/logout']='AuthController/logout';
+
+// Kategori Project
+$route['dashboard/projek/kategori']='KategoriProjectController';
+$route['projek/kategori/hapus/(:any)']='KategoriProjectController/hapus';
+$route['projek/kategori/simpan']='KategoriProjectController/simpan';
+$route['projek/kategori/update']='KategoriProjectController/update';
+$route['dashboard/projek/kategori/edit/(:any)']='KategoriProjectController/edit';
+// End Kategori Project
+
+// Project 
+$route['dashboard/projek']='ProjectController';
+$route['dashboard/projek/tambah']='ProjectController/tambah';
+$route['projek/hapus/(:any)']='ProjectController/hapus';
+$route['projek/simpan']='ProjectController/simpan';
+$route['projek/update']='ProjectController/update';
+$route['dashboard/projek/edit/(:any)']='ProjectController/edit';
+// ENd Projek 
+
+// Maintenance 
+$route['dashboard/maintenance']='MaintenanceController';
+$route['dashboard/maintenance/tambah']='MaintenanceController/tambah';
+$route['maintenance/hapus/(:any)']='MaintenanceController/hapus';
+$route['maintenance/simpan']='MaintenanceController/simpan';
+$route['maintenance/update']='MaintenanceController/update';
+$route['dashboard/maintenance/edit/(:any)']='MaintenanceController/edit';
+// ENd Maintenance
+
+// Training 
+$route['dashboard/training']='TrainingController';
+$route['dashboard/training/tambah']='TrainingController/tambah';
+$route['training/hapus/(:any)']='TrainingController/hapus';
+$route['training/simpan']='TrainingController/simpan';
+$route['training/update']='TrainingController/update';
+$route['dashboard/training/edit/(:any)']='TrainingController/edit';
+// ENd Training
+
+
+// Training 
+$route['dashboard/service']='ServiceController';
+$route['dashboard/service/tambah']='ServiceController/tambah';
+$route['service/hapus/(:any)']='ServiceController/hapus';
+$route['service/simpan']='ServiceController/simpan';
+$route['service/update']='ServiceController/update';
+$route['dashboard/service/edit/(:any)']='ServiceController/edit';
+// ENd Training
+
+// News 
+$route['dashboard/news']='NewsController';
+$route['dashboard/news/tambah']='NewsController/tambah';
+$route['news/hapus/(:any)']='NewsController/hapus';
+$route['news/simpan']='NewsController/simpan';
+$route['news/update']='NewsController/update';
+$route['dashboard/news/edit/(:any)']='NewsController/edit';
+// ENd News
