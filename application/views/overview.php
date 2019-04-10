@@ -325,7 +325,7 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
   </div>
   <div class="row mt-md mb-xl">
     <?php
-    $this->db->order_by('id', 'DESC');
+    $this->db->order_by('id_maintenance', 'DESC');
     $data = $this->db->get('maintenances',1)->result();
     foreach ($data as $maintenance) {
       
@@ -337,7 +337,7 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
           <div class="thumb-info-caption custom-box-shadow">
             <div class="thumb-info-caption-text">
               <h4 class="text-center"><a href="<?= $maintenance->link_maintenance ?>" class="text-color-dark"> <?= $maintenance->nama_maintenance ?></a></h4>
-              <p class="justify"><?= $maintenance->deskripsi ?></p>
+              <p class="justify"><?= $maintenance->deskripsi_maintenance ?></p>
             </div>
           </div>
         </div>
@@ -350,7 +350,7 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
 
 
     <?php
-    $this->db->order_by('id', 'DESC');
+    $this->db->order_by('id_service', 'DESC');
     $data = $this->db->get('services',1)->result();
     foreach ($data as $service) {
       
@@ -362,7 +362,7 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
           <div class="thumb-info-caption custom-box-shadow">
             <div class="thumb-info-caption-text">
               <h4 class="text-center"><a href="<?= $service->link_service ?>" class="text-color-dark"> <?= $service->nama_service ?></a></h4>
-              <p class="justify"><?= $service->deskripsi ?></p>
+              <p class="justify"><?= $service->deskripsi_service ?></p>
             </div>
           </div>
         </div>
@@ -375,7 +375,7 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
 
 
     <?php
-    $this->db->order_by('id', 'DESC');
+    $this->db->order_by('id_training', 'DESC');
     $data = $this->db->get(' trainings',1)->result();
     foreach ($data as $training) {
       
@@ -387,7 +387,8 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
           <div class="thumb-info-caption custom-box-shadow">
             <div class="thumb-info-caption-text">
               <h4 class="text-center"><a href="<?= $training->link_training ?>" class="text-color-dark"> <?= $training->nama_training ?></a></h4>
-              <p class="justify"><?= $training->deskripsi ?></p>
+              <p class="justify"><?= $training->deskripsi_training ?></p>
+              
             </div>
           </div>
         </div>

@@ -104,28 +104,46 @@
                 </ul>
               </li>
               <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Media</a>
+                <a href="#" class="dropdown-toggle">Project</a>
                 <ul class="dropdown-menu">
                   <li>
                     <div class="dropdown-mega-content container">
                       <div class="row">
                         <div class="col-md-3">
-                          <h3><b>Media</b></h3>
+                          <h3><b>Project</b></h3>
                         </div>
+                        <?php 
+                        $data = $this->db->get('kategori_projects')->result();
+                        foreach ($data as $kategori) {
+                          # code...
+                        
+                        ?>
                         <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Media Digital</h4></span>
+                          <span class="dropdown-mega-sub-title"><h4><?= $kategori->nama_kategori_project ?></h4></span>
                             <ul class="dropdown-mega-sub-nav">
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Energia Weekly</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Energia</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Galeri</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Infographic</a></li>
+                            <?php
+                            $id = $kategori->id_kategori_project;
+                            $data =$this->db->get_where('projects',['id_kategori_project'=>$id])->result();
+                            // $data =$this->db->get('projects')->result();
+                            foreach ($data as $kategori_project) {
+                              
+                            ?>
+                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> <?= $kategori_project->nama_project ?></a></li>
+                            <?php
+                            }
+                            ?>
+
                             </ul>
                         </div>
+                        <?php
+                        }
+                        ?>
                       </div>
                     </div>
                   </li>
                 </ul>
               </li>
+
               <li class="dropdown dropdown-mega">
                 <a href="#" class="dropdown-toggle">Responsibility</a>
                 <ul class="dropdown-menu">

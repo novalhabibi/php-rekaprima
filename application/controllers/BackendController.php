@@ -7,10 +7,16 @@ class BackendController extends CI_Controller
     {
         parent::__construct();
 
+        if ($this->session->has_userdata('logged_in') == FALSE) {
+            redirect('auth/login');
+        }
+
     }
 
     public function index()
     {
-        echo "Halaman ADmin";
+        $data['setting'] = $this->db->get('setting')->row();
+
+        $this->load->view('admin/overview',$data);
     }
 }
