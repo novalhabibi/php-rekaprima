@@ -112,3 +112,21 @@ $route['news/simpan']='NewsController/simpan';
 $route['news/update']='NewsController/update';
 $route['dashboard/news/edit/(:any)']='NewsController/edit';
 // ENd News
+
+// Slider 
+$route['dashboard/slider']='SliderController';
+$route['dashboard/slider/tambah']='SliderController/tambah';
+$route['slider/hapus/(:any)']='SliderController/hapus';
+$route['slider/simpan']='SliderController/simpan';
+$route['slider/update']='SliderController/update';
+$route['dashboard/slider/edit/(:any)']='SliderController/edit';
+// ENd Slider
+
+// Manajemen 
+$route['dashboard/manajemen']='ManajemenController';
+$route['dashboard/manajemen/tambah']='ManajemenController/tambah';
+$route['manajemen/hapus/(:any)']='ManajemenController/hapus';
+$route['manajemen/simpan']='ManajemenController/simpan';
+$route['manajemen/update']='ManajemenController/update';
+$route['dashboard/manajemen/edit/(:any)']='ManajemenController/edit';
+// ENd Manajemen
