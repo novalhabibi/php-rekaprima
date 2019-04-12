@@ -91,6 +91,13 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= site_url('dashboard/setting') ?>" > <i class="fas fa-cog"></i>
+                                Setting</a>
+                                
+                            </li>
+
+
                         </ul>
                     </div>
                 </nav>

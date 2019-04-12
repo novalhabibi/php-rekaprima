@@ -130,3 +130,12 @@ $route['manajemen/simpan']='ManajemenController/simpan';
 $route['manajemen/update']='ManajemenController/update';
 $route['dashboard/manajemen/edit/(:any)']='ManajemenController/edit';
 // ENd Manajemen
+
+// Setting Web 
+$route['dashboard/setting']='SettingController';
+$route['dashboard/manajemen/tambah']='ManajemenController/tambah';
+$route['manajemen/hapus/(:any)']='ManajemenController/hapus';
+$route['manajemen/simpan']='ManajemenController/simpan';
+$route['setting/update']='SettingController/update';
+$route['dashboard/manajemen/edit/(:any)']='ManajemenController/edit';
+// ENd Setting Web

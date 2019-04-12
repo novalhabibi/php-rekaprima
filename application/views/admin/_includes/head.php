@@ -18,4 +18,5 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url()?>/assets/admin/assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <title>Administrator <?= $setting->title ?></title>
+    <link rel="shortcut icon" href="<?= site_url() ?><?= $setting->favicon ?>" type="image/x-icon">
 </head>
