@@ -70,6 +70,7 @@ $route['projek/kategori/hapus/(:any)']='KategoriProjectController/hapus';
 $route['projek/kategori/simpan']='KategoriProjectController/simpan';
 $route['projek/kategori/update']='KategoriProjectController/update';
 $route['dashboard/projek/kategori/edit/(:any)']='KategoriProjectController/edit';
+$route['dashboard/projek/kategori/edit/(:any)']='KategoriProjectController/edit';
 // End Kategori Project
 
 // Project 
@@ -98,17 +99,20 @@ $route['training/hapus/(:any)']='TrainingController/hapus';
 $route['training/simpan']='TrainingController/simpan';
 $route['training/update']='TrainingController/update';
 $route['dashboard/training/edit/(:any)']='TrainingController/edit';
+$route['trainings/(:any)']='TrainingController/show';
+
 // ENd Training
 
 
-// Training 
+// Service 
 $route['dashboard/service']='ServiceController';
 $route['dashboard/service/tambah']='ServiceController/tambah';
 $route['service/hapus/(:any)']='ServiceController/hapus';
 $route['service/simpan']='ServiceController/simpan';
 $route['service/update']='ServiceController/update';
 $route['dashboard/service/edit/(:any)']='ServiceController/edit';
-// ENd Training
+$route['services/(:any)']='ServiceController/show';
+// ENd Service
 
 // News 
 $route['dashboard/news']='NewsController';
@@ -144,4 +148,7 @@ $route['manajemen/hapus/(:any)']='ManajemenController/hapus';
 $route['manajemen/simpan']='ManajemenController/simpan';
 $route['setting/update']='SettingController/update';
 $route['dashboard/manajemen/edit/(:any)']='ManajemenController/edit';
-// ENd Setting Web
+// ENd Setting 
+
+
+

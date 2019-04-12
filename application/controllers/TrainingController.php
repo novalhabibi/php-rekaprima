@@ -26,6 +26,12 @@ class TrainingController extends CI_Controller
         // $this->load->view('admin/trainings/s/index',$data);
     }
 
+    public function show(){
+        $link = $this->uri->segment(2);
+        $data['training'] = $this->trainingmodel->getBylink($link);
+        $this->load->view('singlepage-training',$data);
+    }
+
     public function tambah()
     {
         if ($this->session->has_userdata('logged_in') == FALSE) {

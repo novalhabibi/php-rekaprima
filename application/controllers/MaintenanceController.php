@@ -25,7 +25,7 @@ class MaintenanceController extends CI_Controller
     public function show(){
         $link = $this->uri->segment(2);
         $data['maintenance'] = $this->maintenancemodel->getBylink($link);
-        $this->load->view('singlepage',$data);
+        $this->load->view('singlepage-maintenance',$data);
     }
 
     public function tambah()

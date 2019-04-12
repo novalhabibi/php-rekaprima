@@ -51,6 +51,11 @@ class TrainingModel extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
+    public function getBylink($link)
+    {
+        return $this->db->get_where($this->_table,['link_training'=>$link])->row();
+    }
+
     public function getAllJoin()
     {
         $this->db->select('*');

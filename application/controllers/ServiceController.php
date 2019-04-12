@@ -20,10 +20,11 @@ class ServiceController extends CI_Controller
         $data['services']= $this->servicemodel->getAllJoin();
         $this->load->view('admin/services/index',$data);
 
-        // $data['setting'] = $this->db->get('setting')->row();
-
-        // $data['_service']= $this->servicemodel->getById($id);
-        // $this->load->view('admin/services/s/index',$data);
+    }
+    public function show(){
+        $link = $this->uri->segment(2);
+        $data['service'] = $this->servicemodel->getBylink($link);
+        $this->load->view('singlepage-service',$data);
     }
 
     public function tambah()

@@ -89,7 +89,7 @@
                               $data=$this->db->get('services')->result();
                               foreach($data as $service){
                               ?>
-                              <li><a href="<?= $service->link_service ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i><?= $service->nama_service ?></a></li>
+                              <li><a href="<?= site_url('services/') ?><?= $service->link_service ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i><?= $service->nama_service ?></a></li>
                               <?php } ?>
                             </ul>
                         </div>
@@ -100,7 +100,7 @@
                               $data=$this->db->get('trainings')->result();
                               foreach($data as $training){
                               ?>
-                              <li><a href="<?= $training->link_training ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i><?= $training->nama_training ?></a></li>
+                              <li><a href="<?= site_url('trainings/') ?><?= $training->link_training ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i><?= $training->nama_training ?></a></li>
                               <?php } ?>
                             </ul>
                         </div>
@@ -134,7 +134,7 @@
                             foreach ($data as $kategori_project) {
                               
                             ?>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> <?= $kategori_project->nama_project ?></a></li>
+                              <li><a href="<?= site_url() ?><?= url_title($kategori->nama_kategori_project, 'dash', TRUE) ?>/<?= $kategori_project->link_project ?> "><i class="fa fa-chevron-right" aria-hidden="true"></i> <?= $kategori_project->nama_project ?></a></li>
                             <?php
                             }
                             ?>

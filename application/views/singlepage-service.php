@@ -111,12 +111,13 @@ $table = $uri;
                                 <ul class="nav nav-list mb-xl show-bg-active">
                                     <?php
                                     $data = $this->db->get($table)->result();
-                                    foreach ($data as $maintenance) {
+                                    foreach ($data as $service) {
                                       # code...
                                     
                                     ?>
                                     <li><a data-hash="" data-hash-offset="0"
-                                            href="<?= site_url('maintenances/') ?><?= $maintenance->link_maintenance ?>"><?= $maintenance->nama_maintenance ?></a></li>
+                                            href="<?= site_url('services/') ?><?= $service->link_service ?>"><?= $service->nama_service ?></a>
+                                    </li>
                                     <?php
                                     }
                                     ?>
@@ -127,64 +128,16 @@ $table = $uri;
                     <div class="col-md-9">
 
 
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12" style="height: 200px;">
-                                <h3>aa</h3>
-                                <p style="text-align: justify;">
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                Beragam produk yang dipasarkan di seluruh Indonesia dan
-                                    kita gunakan dalam kehidupan sehari-hari banyak berawal dari produk petrokimia.
-                                    Sebagai penggerak perekonomian bangsa, Pertamina berkomitmen untuk senantiasa
-                                    membangun bangsa dengan penyediaan produk-produk yang berkualitas guna memenuhi
-                                    kebutuhan konsumen akan produk yang unggul.
-                                </p>
-                               
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1><?= $service->nama_service ?></h1>
+                                    <hr>
+                                    <p>
+                                    <?= $service->deskripsi_service ?>
+                                    </p>
+                                </div>
                             </div>
-                           
                         </div>
                     </div>
 
