@@ -50,6 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'overview';
+$route['aboutus'] = 'overview/aboutus';
+$route['sejarah'] = 'overview/sejarah';
+$route['contact'] = 'overview/contact';
+$route['visimisi'] = 'overview/visimisi';
+$route['smart'] = 'overview/smart';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -83,6 +88,7 @@ $route['maintenance/hapus/(:any)']='MaintenanceController/hapus';
 $route['maintenance/simpan']='MaintenanceController/simpan';
 $route['maintenance/update']='MaintenanceController/update';
 $route['dashboard/maintenance/edit/(:any)']='MaintenanceController/edit';
+$route['maintenances/(:any)']='MaintenanceController/show';
 // ENd Maintenance
 
 // Training 

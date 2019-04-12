@@ -83,8 +83,8 @@
                         </div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                            <label for="validationCustom04">Deskripsi maintenance</label>
-                            <textarea name="deskripsi_maintenance" class="form-control" id="validationCustom04" required cols="5" rows="5"><?= $maintenance->deskripsi_maintenance ?></textarea>
+                            <label for="ckeditor">Deskripsi maintenance</label>
+                            <textarea name="deskripsi_maintenance" class="form-control" data-sample-short id="ckeditor" required cols="5" rows="5"><?= $maintenance->deskripsi_maintenance ?></textarea>
                             <div class="valid-feedback"><i class="fas fa-info-circle"></i>
                                 Bagus! 
                             </div>

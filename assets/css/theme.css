@@ -3786,6 +3786,9 @@ html.dark .text-muted {
 	border-top: 4px solid #060606;
 	margin-top: 40px;
 	padding: 30px 0 10px;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
 }
 
 #footer .footer-copyright nav {

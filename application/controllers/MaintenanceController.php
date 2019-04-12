@@ -15,15 +15,17 @@ class MaintenanceController extends CI_Controller
 
     public function index()
     {
-        // echo "ini";
+
         $data['setting'] = $this->db->get('setting')->row();
         $data['maintenances']= $this->maintenancemodel->getAllJoin();
         $this->load->view('admin/maintenances/index',$data);
 
-        // $data['setting'] = $this->db->get('setting')->row();
+    }
 
-        // $data['_maintenance']= $this->maintenancemodel->getById($id);
-        // $this->load->view('admin/maintenances/s/index',$data);
+    public function show(){
+        $link = $this->uri->segment(2);
+        $data['maintenance'] = $this->maintenancemodel->getBylink($link);
+        $this->load->view('singlepage',$data);
     }
 
     public function tambah()

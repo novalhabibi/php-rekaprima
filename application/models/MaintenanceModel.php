@@ -65,6 +65,11 @@ class MaintenanceModel extends CI_Model
         return $this->db->get_where($this->_table,['id_maintenance'=>$id])->row();
     }
 
+    public function getBylink($link)
+    {
+        return $this->db->get_where($this->_table,['link_maintenance'=>$link])->row();
+    }
+
 
     public function simpan()
     {

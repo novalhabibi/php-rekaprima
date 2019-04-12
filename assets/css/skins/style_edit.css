@@ -82,7 +82,12 @@ h6 { font-size: 14px; }
 }
 
 #middle { position: relative;z-index: 0; }
-#footer { position: relative; }
+#footer { 
+    position: fixed; 
+      left: 0;
+      bottom: 0;
+      width: 100%;
+}
 .wrap_load{
     position: fixed;
     top:0;

@@ -87,7 +87,7 @@
                                                 <td><?= $maintenance->nama_maintenance ?> </td>
                                                 
                                                 <td>
-<a href="<?= base_url() ?><?= $maintenance->gambar_maintenance ?>" data-toggle="lightbox" data-title="<?= $maintenance->nama_maintenance ?>" data-footer="<?= $maintenance->deskripsi_maintenance ?>">Lihat gambar</a>
+<a href="<?= base_url() ?><?= $maintenance->gambar_maintenance ?>" data-toggle="lightbox" data-title="<?= $maintenance->nama_maintenance ?>" data-footer="">Lihat gambar</a>
                                                 </td>
                                                 <td><?= substr($maintenance->deskripsi_maintenance,0,10) ?> </td>
                                                 <td><?= $maintenance->link_maintenance ?> </td>
