@@ -48,7 +48,7 @@ li {
 	transition: min-height 0.3s ease;
 	width: 100%;
 	z-index: 1001;
-	min-height: 125px;
+	min-height: 69px;
 }
 
 #header.header-no-min-height .header-body {
@@ -303,11 +303,15 @@ li {
 }
 
 #header .header-logo-collapse-nav {
-	background: #CCC;
+	background: #FFF;
 	color: #FFF;
 	display: none;
 	float: left;
 	margin: 12px 0 8px 15px;
+}
+
+#header .logo-collapse-nav {
+	display: block;
 }
 
 #header.header-narrow .header-body {
@@ -1155,6 +1159,10 @@ html:not(.sticky-header-active) #header.header-transparent-sticky-deactive .head
 		display: block;
 		position: relative;
 		z-index: 1;
+	}
+
+	#header .logo-collapse-nav {
+		display: none;
 	}
 
 	#header .header-nav-bar {

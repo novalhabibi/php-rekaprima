@@ -1,3 +1,6 @@
+<?php
+$setting=$this->db->get('setting')->row();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +46,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/vendor/owl.carousel/assets/owl.theme.default.min.css') ?>">
 
     <!-- Theme CSS -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/theme_edit.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/theme-elements.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/theme-blog.css') ?>">
 
@@ -53,7 +56,7 @@
     <!-- Theme Custom CSS -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css') ?>">
 
-	<title>Home | PT Len Rekaprima Semesta</title>
+	<title>Home | <?= $setting->title ?></title>
 	
 	<!-- Head Libs -->
   <script src="<?php echo base_url('assets/vendor/modernizr/modernizr.min.js') ?>"></script>
@@ -70,166 +73,35 @@
 
     gtag('config', 'UA-20166082-2');
   </script>
+  <style>
+    div.static {
+      position: absolute;
+      top: 180px;
+      left: 280px;
+      z-index: 1;
+    }
+  </style>
+  <style>
+	   .table-container
+		{
+		width: 100%;
+		overflow-y: auto;
+		_overflow: auto;
+		margin: 0 0 1em;
+		}
+		
+    </style>
 </head>
 
 <body>
-  <div class="body sticky-header-active">
-	<header id="header" class="header-no-border-bottom" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 10, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
-      <div class="header-body">
-        <div class="header-container">
-          <div class="header-row">
-            <div class="header-column">
-            </div>
-          </div>
-        </div>
-        <div class="header-container header-nav header-nav-center header-nav-bar header-nav-bar-primary">
-          <div class="header-logo-collapse-nav">
-                <a href="#">
-                  <img alt="Len Rekaprima Semesta" width="90" height="40" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="<?php echo base_url('assets/img/lrs-logo.png') ?>">
-                </a>
-              </div>
-          <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
-            <i class="fa fa-bars"></i>
-          </button>
-        <div class="header-nav-main header-nav-main-light header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse" style="padding-top:3px;">
-          <nav>
-            <ul class="nav nav-pills container" id="mainNav">
-              <li style="float: left">
-              <div class="logo col-md-3 logo-collapse-nav">
-              <a href="#">
-                  <img alt="Len Rekaprima Semesta" width="110" height="50" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="<?php echo base_url('assets/img/lrs-logo2.png') ?>">
-                </a>
-            </div>
-              </li>
-              <li class="">
-                <a href="<?php echo base_url('index.php/overview') ?>">
-                  <i class="fa fa-home" style="font-size:25px;"></i>
-                </a>
-              </li>
-              <li class="dropdown dropdown-mega">
-              	<a href="#" class="dropdown-toggle">Profile</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Profile</b></h3>
-                        </div>
-                          <div class="col-md-3">
-                            <span class="dropdown-mega-sub-title"><h4>Profil Perusahaan</h4></span>
-                              <ul class="dropdown-mega-sub-nav">
-                                <li><a href="<?php echo base_url('index.php/overview/aboutus') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Siapa Kami</a></li>
-                                <li><a href="<?php echo base_url('index.php/overview/sejarah') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Sejarah Len Rekaprima Semesta</a></li>
-                                <li><a href="<?php echo base_url('index.php/overview/visimisi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Visi &amp; Misi</a></li>
-                                <li><a href="<?php echo base_url('index.php/overview/smart') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Nilai-nilai Perusahaan (SMART)</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Struktur Organisasi</a></li>
-                              </ul>
-                          </div>
-                          <div class="col-md-3">
-                            <span class="dropdown-mega-sub-title"><h4>Pemimpin Kami</h4></span>
-                              <ul class="dropdown-mega-sub-nav">
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Management</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Dewan Komisaris</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Bisnis Kami</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Bisnis Kami</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Maintenance</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                              <li><a href="<?php echo base_url('index.php/overview/signaling') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Signalling System</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Telecommunication System</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Traction System</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Interlocking System</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Systems</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                            </ul>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Lain-Lain</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Project</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Project</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Mainline</h4></span>
-                          <ul class="dropdown-mega-sub-nav">
-                            <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Double Track (DDT) Bekasi</a></li>
-                          </ul>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Urban</h4></span>
-                          <ul class="dropdown-mega-sub-nav">
-                            <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Skytrain</a></li>
-                          </ul>
-                        </div>  
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Jobs</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="dropdown-mega-content container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <h3><b>Jobs</b></h3>
-                        </div>
-                        <div class="col-md-3">
-                          <span class="dropdown-mega-sub-title"><h4>Penerimaan Baru</h4></span>
-                            <ul class="dropdown-mega-sub-nav">
-                              <li><a href="#" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Magang</a></li>
-                              <li><a href="#" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Lulusan Baru</a></li>
-                              <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Tenaga Berpengalaman</a></li>
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <a href="#">News</a>
-              </li>
-              <li class="">
-                <a href="<?php echo base_url('index.php/overview/contact') ?>">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-</header>
+  <div class="body">
+
+  <!-- header -->
+  <?php $this->load->view('_includes/header.php') ?>
+  <!-- end header -->
+
+
+
 <div class="main" role="main">
   <div style="margin-bottom:80px">
     <div id="carousel-example-generic" class="carousel slide">
@@ -311,6 +183,11 @@
       </a>
     </div><!-- /.carousel -->
   </div><!-- /.container -->
+
+
+
+
+  
 <div class="container">
     <div class="row">
       <div class="col-md-12 center">
@@ -341,10 +218,10 @@
       <div class="col-md-3">
         <div class="thumb-info custom-thumb-info-4">
           <div class="animateme scrollme" 
-            data-when="enter" data-from="0.7" 
+            data-when="enter" data-from="0.5" 
             data-to="0.05" 
             data-opacity="0" 
-            data-scale="0">
+            data-translatey="-400">
             <img src="<?php echo base_url('assets/img/History2.png') ?>" class="img-responsive">
           </div>
         </div>
@@ -352,10 +229,10 @@
       <div class="col-md-3">
         <div class="thumb-info custom-thumb-info-4">
           <div class="animateme scrollme" 
-            data-when="enter" data-from="0.7" 
+            data-when="enter" data-from="0.5" 
             data-to="0.05" 
             data-opacity="0" 
-            data-scale="0">
+            data-translatey="400">
             <img src="<?php echo base_url('assets/img/History3.png') ?>" class="img-responsive">
           </div>
         </div>
@@ -389,64 +266,14 @@
           </div>
         </div>
       </div>
-      <ul class="history col-md-6">
-        <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0" data-translatex="-200">
-          <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
-            <div class="box-content">
-              <h4 class="heading-primary" style="margin-top: -10px"><strong>1</strong></h4>
-              <p><strong>Maintenance of OCC & SCADA System</strong></p>
-            </div>
-          </div>
-        </li>
-        <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0" data-translatex="-200" style="margin-top: -25px">
-          <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
-            <div class="box-content">
-              <h4 class="heading-primary" style="margin-top: -10px"><strong>2</strong></h4>
-              <p><strong>Maintenance of Electric Propulsion System</strong></p>
-            </div>
-          </div>
-        </li>
-        <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0" data-translatex="-200" style="margin-top: -25px">
-          <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
-            <div class="box-content">
-              <h4 class="heading-primary" style="margin-top: -10px"><strong>3</strong></h4>
-              <p><strong>Railway Operation</strong></p>
-            </div>
-          </div>
-        </li>
-        <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0" data-translatex="-200" style="margin-top: -25px">
-          <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
-            <div class="box-content">
-              <h4 class="heading-primary" style="margin-top: -10px"><strong>4</strong></h4>
-              <p><strong>Maintenance of Power, Third Rail & Substation System</strong></p>
-            </div>
-          </div>
-        </li>
-        <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0" data-translatex="-200" style="margin-top: -25px">
-          <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
-            <div class="box-content">
-              <h4 class="heading-primary" style="margin-top: -10px"><strong>5</strong></h4>
-              <p><strong>Maintenance of Signaling & PSD System</strong></p>
-            </div>
-          </div>
-        </li>
-        <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0" data-translatex="-200" style="margin-top: -25px">
-          <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
-            <div class="box-content">
-              <h4 class="heading-primary" style="margin-top: -10px"><strong>6</strong></h4>
-              <p><strong>Maintenance of Telecommunication System</strong></p>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="col-md-6">
+      <div class="col-md-12 center">
       <div class="animateme scrollme" 
             data-when="enter" 
-            data-from="0.3" 
+            data-from="0.7" 
             data-to="0.05" 
             data-opacity="0" 
             data-scale="0">
-          <img src="<?php echo base_url('assets/img/lengif1.gif') ?>" style="width: 100%">
+          <img src="<?php echo base_url('assets/img/lengif.gif') ?>" style="width: 60%">
         </div>
       </div>
     </div>
@@ -497,99 +324,164 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
     </div>
   </div>
   <div class="row mt-md mb-xl">
+    <?php
+    $this->db->order_by('id_maintenance', 'DESC');
+    $data = $this->db->get('maintenances',1)->result();
+    foreach ($data as $maintenance) {
+      
+    ?>
     <div class="col-md-4">
       <div class="thumb-info custom-thumb-info-4 animateme scrollme" 
       data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatex="-200">
-        <div class="thumb-info-wrapper"><img src="<?php echo base_url('assets/media/image/slider/Soetta-LRS.jpg') ?>" class="img-responsive" /></div>
+        <div class="thumb-info-wrapper"><img src="<?= $maintenance->gambar_maintenance ?>" class="img-responsive" /></div>
           <div class="thumb-info-caption custom-box-shadow">
             <div class="thumb-info-caption-text">
-              <h4 class="text-center"><a href="#" class="text-color-dark"> Skytrain</a></h4>
-              <p class="justify">Skytrain Bandara Soekarno Hatta</p>
+              <h4 class="text-center"><a href="<?= $maintenance->link_maintenance ?>" class="text-color-dark"> <?= $maintenance->nama_maintenance ?></a></h4>
+              <p class="justify"><?= $maintenance->deskripsi_maintenance ?></p>
             </div>
           </div>
         </div>
-      </div>
+    </div>
+    <?php
+    # code...
+    }
+
+    ?>
+
+
+    <?php
+    $this->db->order_by('id_service', 'DESC');
+    $data = $this->db->get('services',1)->result();
+    foreach ($data as $service) {
+      
+    ?>
     <div class="col-md-4">
       <div class="thumb-info custom-thumb-info-4 animateme scrollme" 
-          data-from="0.5"
-				  data-to="0"
-				  data-crop="false"
-				  data-opacity="0"
-				  data-translatey="200">
-        <div class="thumb-info-wrapper"><img src="<?php echo base_url('assets/media/image/slider/N.jpg') ?>" class="img-responsive" /></div>
+      data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatex="-200">
+        <div class="thumb-info-wrapper"><img src="<?= $service->gambar_service ?>" class="img-responsive" /></div>
           <div class="thumb-info-caption custom-box-shadow">
             <div class="thumb-info-caption-text">
-              <h4 class="text-center"><a href="#" class="text-color-dark"> Interlocking System </a></h4>
-              <p class="justify">Len Interlocking System (SIL) is a product of PLC based Interlocking system developed by PT Len Industri.SIL is used as Interlocking Processor to control outdoor equipment operation such as light signal, track circuit, point machine, etc. SIL is developed as an alternative solution for railway interlocking system especially for Indonesian railway. SIL operation stresses the importance of safety, reliability, availability as well as easy maintenance.</p>
+              <h4 class="text-center"><a href="<?= $service->link_service ?>" class="text-color-dark"> <?= $service->nama_service ?></a></h4>
+              <p class="justify"><?= $service->deskripsi_service ?></p>
             </div>
           </div>
         </div>
-      </div>
+    </div>
+    <?php
+    # code...
+    }
+
+    ?>
+
+
+    <?php
+    $this->db->order_by('id_training', 'DESC');
+    $data = $this->db->get(' trainings',1)->result();
+    foreach ($data as $training) {
+      
+    ?>
     <div class="col-md-4">
       <div class="thumb-info custom-thumb-info-4 animateme scrollme" 
-      data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatex="200">
-        <div class="thumb-info-wrapper"><img src="<?php echo base_url('assets/media/image/slider/CBI-3.jpg') ?>" class="img-responsive" /></div>
+      data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatex="-200">
+        <div class="thumb-info-wrapper"><img src="<?= $training->gambar_training ?>" class="img-responsive" /></div>
           <div class="thumb-info-caption custom-box-shadow">
             <div class="thumb-info-caption-text">
-              <h4 class="text-center"><a href="" class="text-color-dark"> Computer Base Interlocking </a></h4>
-              <p class="justify">Len Computer Base Interlocking System (CBI) is a product developed by PT Len Industri (Persero). CBI is used as Interlocking System to control outdoor equipment operation such as light signal, track circuit, point machine, etc all in Computer Base System.</p>
+              <h4 class="text-center"><a href="<?= $training->link_training ?>" class="text-color-dark"> <?= $training->nama_training ?></a></h4>
+              <p class="justify"><?= $training->deskripsi_training ?></p>
+              
             </div>
           </div>
+        </div>
+    </div>
+    <?php
+    # code...
+    }
+
+    ?>
+
+
+      
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Crousel -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading heading-border heading-middle-border heading-middle-border-center">
+          <div class="scrollme animateme"
+				    data-when="enter"
+				    data-from="0.7"
+				    data-to="0"
+				    data-crop="false"
+				    data-opacity="0"
+				    data-scale="1.5">
+          <h1><strong>MAINTENANCE</strong> & SERVICE</h1>
+          </div>
+        </div>
+        <div class="owl-carousel owl-theme stage-margin" data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
+          
+          <!-- Maintenances -->
+          <?php
+          $data = $this->db->get('maintenances')->result();
+          foreach ($data as $maintenance) {
+          ?>
+          <div class="thumb-info custom-thumb-info-4"><a href="<?= $maintenance->link_maintenance ?>" target="_blank">
+            <img src="<?= $maintenance->gambar_maintenance ?>"></a>
+          </div>
+          <?php } ?>
+          <!-- End Maintenances -->
+        
+          <!-- Service -->
+          <?php
+          $data = $this->db->get('services')->result();
+          foreach ($data as $service) {
+          ?>
+          <div class="thumb-info custom-thumb-info-4"><a href="<?= $service->link_service ?>" target="_blank">
+            <img src="<?= $service->gambar_service ?>"></a>
+          </div>
+          <?php } ?>
+          <!-- End Service -->
+          
         </div>
       </div>
     </div>
   </div>
+<!-- End Crousel -->
+
+
+
+</div>
  <!----------------------------------------------------------------------------------------------------> 
   <section class="section section-no-background m-none">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 animateme scrollme" data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatex="-200">
+        <div class="col-md-4" data-wow-delay=".4s">
           <h2 class="mb-lg">PRESS <strong>RELEASE</strong></h2>
-           <div class="table-container col-md-12" rules="rows">
+           <div class="table-container col-md-4" rules="rows">
+            <?php
+            $data = $this->db->get('news',5)->result();
+
+            foreach ($data as $news) {
+              # code...
+            
+            ?>
             <div class="recent-posts">
               <article class="post">
                 <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
+                  <span><i class="fa fa-calendar"></i> <?= $news->tgl_posting ?> </span>
                 </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
+                <h5><a href="<?= $news->slug ?>"><?= $news->judul ?></a></h5>
               </article>
             </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
-            <div class="recent-posts">
-              <article class="post">
-                <div class="post-meta">
-                  <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                </div>
-                <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-              </article>
-            </div>
+            <?php } ?>
           </div>
           </div>
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 welcome padding-left-none padding-bottom-40 scroll_effect fadeInUp animateme scrollme"
-          data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatex="200">
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 welcome padding-left-none padding-bottom-40 scroll_effect fadeInUp">
             <h2 class="margin-bottom-25 margin-top-none">HIGHLIGHT <strong>PROGRAM</strong></h2>
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -615,56 +507,93 @@ Kami tidak pemah memungut biaya apapun dalam proses rekrutmen. Kami  tidak perna
 <div class="clearfix"></div>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 center scrollme animateme"
-            data-when="enter"
-				    data-from="0.5"
-				    data-to="0.05"
-				    data-crop="true"
-				    data-opacity="0"
-				    data-scale="2">
+      <div class="col-md-12 center">
         <h2>OUR <strong>PARTNER</strong></h2>
       </div>
     </div>
-      <div class="owl-carousel owl-theme stage-margin animateme scrollme" data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}" data-when="enter" 
-            data-from="0.5" 
-            data-to="0.02" 
-            data-opacity="0" 
-            data-scale="0">
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/LEN.png') ?>">
-        </div>
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/LRS2.png') ?>">
-        </div>
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/KAI.png') ?>">
-        </div>
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/egis.png') ?>">
-        </div>
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/Angkasapura2.png') ?>">
-        </div>
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/Kemenhub2.png') ?>">
-        </div>
-        <div class="thumb-info custom-thumb-info-4">
-          <img src="<?php echo base_url('assets/media/image/partner/akademi2.png') ?>">
-        </div>
+    <div class="row mt-lg">
+      <?php
+      $data = $this->db->get('clients')->result();
+      foreach ($data as $client) {        
+      ?>
+      <div class="col-md-2">
+        <img src="<?= $client->icon_client ?>" class="img-responsive">
+      </div>
+      <?php
+      }
+      ?>
+
     </div>
   </div>
 </div>
 <!--Footer Start-->
-<footer class="footer-copyright" id="footer" style="padding: 30px; font-size: 14px">
+<footer class="color color-quaternary" id="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-11">
-        <span class='copyright'>Copyright &copy; 2019 <a href="#">PT Len Rekaprima Semesta</a>. All rights reserved.</span>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>Our Website</h5>
+            <ul class="list list-icons list-icons-sm">
+              <li><i class="fa fa-caret-right"></i> <a href="#">Privacy Policy</a></li>
+              <li><i class="fa fa-caret-right"></i> <a href="#">Scam Alert</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Announcement</h5>
+            <ul class="list list-icons list-icons-sm">
+              <li><i class="fa fa-caret-right"></i> <a href="#" id="" news-room="" general-procurement="">General Procurement</a></li>
+              <li><i class="fa fa-caret-right"></i> <a href="#">Annoucement</a></li>
+              <li><i class="fa fa-caret-right"></i> <a href="#">E-Procurement</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Network</h5>
+            <ul class="list list-icons list-icons-sm">
+              <li><i class="fa fa-caret-right"></i> <a href="#">Subsidiaries</a></li>
+              <li><i class="fa fa-caret-right"></i> <a href="#">Office Address</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>      
-</footer>
-</div>
+      <div class="col-md-3">
+        <h5 class="mb-sm">Contact Us</h5>
+        <!-- Ambil data dari database -->
+        <?php 
+        $setting=$this->db->get('setting')->row();
+
+        ?>
+        <span class="phone"><?= $setting->no_telpon ?></span>
+          <ul class="list list-icons mt-xl">
+            <li><i class="fa fa-map-marker"></i> <strong>Address :</strong><?= $setting->alamat ?></li>
+            <li><i class="fa fa-envelope"></i> <strong>Email :</strong> <a href="#"><?= $setting->email ?></a></li>
+          </ul>
+          <ul class="social-icons mt-xl">
+            <li>
+              <a class="sc-1" href="https://www.facebook.com/lenrekaprima" target="_blank"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a class="sc-2" href="https://twitter.com/lenrekaprima" target="_blank"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a class="sc-11" href="https://www.instagram.com/lenrekaprima/?hl=id" target="_blank"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li style="box-shadow:none;"><h5 style="font-size:16px;text-transform:none;">| @Lenrekaprima</h5></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-11">
+              <span class='copyright'>Copyright &copy; 2019 <a href="#"><?= $setting->title ?></a>. All rights reserved.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
   <!-- Vendor -->
 <script src="<?php echo base_url('assets/vendor/jquery/jquery-3.3.1.js') ?>"></script>
 <script src="<?php echo base_url('assets/vendor/jquery/jquerysc.min.js') ?>"></script>
