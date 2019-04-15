@@ -70,7 +70,7 @@ $route['projek/kategori/hapus/(:any)']='KategoriProjectController/hapus';
 $route['projek/kategori/simpan']='KategoriProjectController/simpan';
 $route['projek/kategori/update']='KategoriProjectController/update';
 $route['dashboard/projek/kategori/edit/(:any)']='KategoriProjectController/edit';
-$route['dashboard/projek/kategori/edit/(:any)']='KategoriProjectController/edit';
+$route['kat/(:any)/(:any)']='KategoriProjectController/show';
 // End Kategori Project
 
 // Project 

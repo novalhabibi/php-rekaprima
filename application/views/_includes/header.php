@@ -134,7 +134,7 @@
                             foreach ($data as $kategori_project) {
                               
                             ?>
-                              <li><a href="<?= site_url() ?><?= url_title($kategori->nama_kategori_project, 'dash', TRUE) ?>/<?= $kategori_project->link_project ?> "><i class="fa fa-chevron-right" aria-hidden="true"></i> <?= $kategori_project->nama_project ?></a></li>
+                              <li><a href="<?= site_url('kat/') ?><?= url_title($kategori->nama_kategori_project, 'dash', TRUE) ?>/<?= $kategori_project->link_project ?> "><i class="fa fa-chevron-right" aria-hidden="true"></i> <?= $kategori_project->nama_project ?></a></li>
                             <?php
                             }
                             ?>

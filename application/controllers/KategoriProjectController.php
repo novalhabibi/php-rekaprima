@@ -8,6 +8,7 @@ class KategoriProjectController extends CI_Controller
         parent:: __construct();
         $this->load->library('form_validation');
         $this->load->model('kategoriprojectmodel');
+        $this->load->model('projectmodel');
     }
 
     public function index()
@@ -17,10 +18,20 @@ class KategoriProjectController extends CI_Controller
         $data['kategori_projects']= $this->kategoriprojectmodel->getAll();
         $this->load->view('admin/projects/kategoris/index',$data);
 
-        // $data['setting'] = $this->db->get('setting')->row();
+    }
 
-        // $data['kategori_project']= $this->kategoriprojectmodel->getById($id);
-        // $this->load->view('admin/projects/kategoris/index',$data);
+    public function show()
+    {
+         $this->uri->segment(2);
+         
+         $link=$this->uri->segment(3);
+         
+         
+
+        $data['kat']=$this->projectmodel->getByLink($link);
+        $this->load->view('singlepage-kat',$data);
+
+
     }
 
     public function edit()

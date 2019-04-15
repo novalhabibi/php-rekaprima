@@ -67,6 +67,11 @@ class ProjectModel extends CI_Model
         return $this->db->get_where($this->_table,['id_project'=>$id])->row();
     }
 
+    public function getByLink($link)
+    {
+        return $this->db->get_where($this->_table,['link_project'=>$link])->row();
+    }
+
 
     public function simpan()
     {
