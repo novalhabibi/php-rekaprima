@@ -123,6 +123,16 @@ $route['news/update']='NewsController/update';
 $route['dashboard/news/edit/(:any)']='NewsController/edit';
 // ENd News
 
+
+// Client 
+$route['dashboard/client']='ClientController';
+$route['dashboard/client/tambah']='ClientController/tambah';
+$route['client/hapus/(:any)']='ClientController/hapus';
+$route['client/simpan']='ClientController/simpan';
+$route['client/update']='ClientController/update';
+$route['dashboard/client/edit/(:any)']='ClientController/edit';
+// ENd Client
+
 // Slider 
 $route['dashboard/slider']='SliderController';
 $route['dashboard/slider/tambah']='SliderController/tambah';
