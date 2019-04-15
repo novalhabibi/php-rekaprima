@@ -1,3 +1,7 @@
+<?php
+$setting=$this->db->get('setting')->row();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -136,13 +140,10 @@
                         <ul class="list list-icons list-icons-style-3 mt-xlg">
                             <li>
                                 <i class="fa fa-map-marker"></i> <strong>Address:</strong>
-                                PT Len Rekaprima Semesta<br />
-                                Jl. Soekarno-Hatta No 293 <br />
-                                Bandung 40235
-                                Indonesia
+                               <?= $setting->alamat ?>
                             </li>
-                            <li><i class="fa fa-phone"></i> <strong>Phone:</strong>  022-42831927</li>
-                            <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="#">it@lenrekaprima.co.id</a></li>
+                            <li><i class="fa fa-phone"></i> <strong>Phone:</strong>  <?= $setting->no_telpon ?></li>
+                            <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:<?= $setting->email ?>"><?= $setting->email ?></a></li>
                         </ul>
 
                         <hr>
