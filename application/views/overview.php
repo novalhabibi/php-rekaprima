@@ -1,5 +1,22 @@
 <?php
 $setting=$this->db->get('setting')->row();
+
+
+$sliders=$this->db->get_where('slider', array('status' => True),5)->result();
+
+
+$this->db->order_by('id', 'DESC');
+$sliderpertama=$this->db->get('slider')->row();
+
+
+
+$data = $this->db->get('news',4)->result();
+
+$this->db->order_by('id', 'DESC');
+$newspertama=$this->db->get('news')->row();
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,82 +110,56 @@ $setting=$this->db->get('setting')->row();
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
+                        <?php 
+                        $no=1;
+                        
+                        foreach ($sliders as $slider) {
+                        # code...
+                        $no;
+                        ?>
+                        <li data-target="#carousel-example-generic" data-slide-to="<?= $no ?>" class=""></li>
+                        <?php
+                        $no++;
+                        }
+                        ?>
                     </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
+
                         <div class="item active">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_50.jpg') ?>"
+                            <img src="<?php echo base_url() ?><?= $sliderpertama->gambar ?>"
                                 class="img-responsive" />
                             <div class="carousel-caption animated fadeInLeft">
                                 <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    SUPPORT
+                                    <?= $sliderpertama->judul ?>
                                 </h2>
                                 <h4 class="slide-text-desc" data-animation="animated bounceInUp">
                                     <h4 style="text-align: left;"><span style="color: #ffffff;">Len Rekaprima Semesta
-                                            selalu memastikan untuk menjaga fungsionalitas peralatan sistem kereta api
-                                            secara berkala.<br /></span></h4>
+                                           <?= $sliderpertama->deskripsi ?><br /></span></h4>
                                 </h4>
                             </div>
                         </div>
+                        <?php 
+                        foreach ($sliders as $slider) {
+                        ?>
                         <div class="item ">
-                            <img src="<?php echo base_Url('assets/media/image/slider/Rekaprima_44.jpg') ?>"
+                            <img src="<?php echo base_Url() ?><?= $slider->gambar ?>"
                                 class="img-responsive" />
                             <div class="carousel-caption animated fadeInLeft">
                                 <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    MAINTAIN
+                                   <?= $slider->judul ?>
                                 </h2>
                                 <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Menjaga sistem yang didukung oleh PT. Len
-                                            Rekaprima Semesta sebagai anak perusahaan dari PT. Len Railway
-                                            Systems</span></h4>
+                                    <h4><span style="color: #ffffff;"><?= $slider->deskripsi ?></span></h4>
                                 </h4>
                             </div>
                         </div>
-                        <div class="item ">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_43.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    AGILE
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Menjadi mitra kelas dunia yang paling dapat
-                                            diandalkan untuk Sistem Kereta Api</span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_47.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    RESPONSIBLE
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Len Rekaprima Semesta selalu siap untuk memberikan
-                                            kualitas yang sesuai dengan permintaan pelanggan, serta memberikan pelayanan
-                                            yang terbaik</span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_46.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    TOTAL
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Berkontribusi dalam meningkatkan produktivitas dan
-                                            mobilitas orang melalui Sistem Kereta Api yang andal dan aman</span></h4>
-                                </h4>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
+
+
                     </div><!-- /.carousel-inner -->
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -415,46 +406,19 @@ $setting=$this->db->get('setting')->row();
                             data-opacity="0" data-translatex="-200">
                             <h2 class="mb-lg">PRESS <strong>RELEASE</strong></h2>
                             <div class="table-container col-md-12" rules="rows">
+
+                            <?php
+                            foreach ($data as $news) {
+                            ?>
                                 <div class="recent-posts">
                                     <article class="post">
                                         <div class="post-meta">
-                                            <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
+                                        <span><i class="fa fa-calendar"></i> <?= $news->tgl_posting ?> </span>
                                         </div>
-                                        <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
+                                        <h5><a href="<?= $news->slug ?>"><?= $news->judul ?></a></h5>
                                     </article>
                                 </div>
-                                <div class="recent-posts">
-                                    <article class="post">
-                                        <div class="post-meta">
-                                            <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                                        </div>
-                                        <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-                                    </article>
-                                </div>
-                                <div class="recent-posts">
-                                    <article class="post">
-                                        <div class="post-meta">
-                                            <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                                        </div>
-                                        <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-                                    </article>
-                                </div>
-                                <div class="recent-posts">
-                                    <article class="post">
-                                        <div class="post-meta">
-                                            <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                                        </div>
-                                        <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-                                    </article>
-                                </div>
-                                <div class="recent-posts">
-                                    <article class="post">
-                                        <div class="post-meta">
-                                            <span><i class="fa fa-calendar"></i> 2019-03-20 10:30:00 </span>
-                                        </div>
-                                        <h5><a href="#">Indonesia Railway Conference 2019</a></h5>
-                                    </article>
-                                </div>
+                            <?php } ?>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 welcome padding-left-none padding-bottom-40 scroll_effect fadeInUp animateme scrollme"
@@ -463,24 +427,37 @@ $setting=$this->db->get('setting')->row();
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                                    <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                                    <?php
+                                    $no=1;
+                                    foreach ($data as $news) {
+                                     $no;
+                                    ?>
+                                    <li data-target="#myCarousel" data-slide-to="<?= $no ?>" class=""></li>
+                                    <?php
+                                    $no++;
+                                    }
+                                    ?>
                                 </ol>
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active"><img
-                                            src="<?php echo base_url('assets/media/image/event/event1.jpg') ?>"
-                                            caption="false" width="1288" height="627" /></div>
+                                            src="<?php echo base_url() ?><?= $newspertama->gambar ?>"
+                                            caption="novalHabibi" width="1288" height="627" />
+                                    </div>
+                                    <?php
+                                    foreach ($data as $news) {
+                                    
+                                    ?>
                                     <div class="item "><img
-                                            src="<?php echo base_url('assets/media/image/event/event2.jpg') ?>"
-                                            caption="false" width="1288" height="627" /></div>
-                                    <div class="item "><img
-                                            src="<?php echo base_url('assets/media/image/event/event3.jpg') ?>"
-                                            caption="false" width="1288" height="627" /></div>
-                                    <div class="item "><img
-                                            src="<?php echo base_url('assets/media/image/event/event4.jpg') ?>"
-                                            caption="false" width="1288" height="627" /></div>
+                                            src="<?php echo base_url() ?><?= $news->gambar ?>"
+                                            caption="false" width="1288" height="627" />
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+
+
+
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span
                                         class="glyphicon glyphicon-chevron-left"></span> <span
@@ -505,27 +482,19 @@ $setting=$this->db->get('setting')->row();
                 <div class="owl-carousel owl-theme stage-margin animateme scrollme"
                     data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}"
                     data-when="enter" data-from="0.5" data-to="0.02" data-opacity="0" data-scale="0">
+
+                    <?php
+                    $data = $this->db->get('clients')->result();
+                    foreach ($data as $client) {
+
+                    ?>
                     <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/LEN.png') ?>">
+                        <img src="<?php echo base_url() ?><?= $client->icon_client ?>">
                     </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/LRS2.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/KAI.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/egis.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/Angkasapura2.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/Kemenhub2.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/akademi2.png') ?>">
-                    </div>
+                    <?php
+                    }
+                    ?>                    
+                    
                 </div>
             </div>
         </div>

@@ -91,6 +91,18 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"> <i class="fas fa-user"></i>
+                                Client</a>
+                                <div id="submenu-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link <?= $this->uri->segment(3) == "client" ?'active':'' ; ?>" href="<?= site_url('dashboard/client') ?>">List Clients<span class="badge badge-secondary">New</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= site_url('dashboard/setting') ?>" > <i class="fas fa-cog"></i>
                                 Setting</a>
