@@ -87,7 +87,7 @@
                                                 <td><?= $project->nama_project ?> </td>
                                                 <td><?= $project->nama_kategori_project ?> </td>
                                                 <td>
-<a href="<?= base_url() ?><?= $project->gambar_project ?>" data-toggle="lightbox" data-title="<?= $project->nama_project ?>" data-footer="<?= $project->deskripsi_project ?>">Lihat gambar</a>
+<a href="<?= base_url() ?><?= $project->gambar_project ?>" data-toggle="lightbox" data-title="<?= $project->nama_project ?>" data-footer="">Lihat gambar</a>
                                                 </td>
                                                 <td><?= substr($project->deskripsi_project,0,10) ?> </td>
                                                 <td><?= $project->link_project ?> </td>

@@ -2,6 +2,7 @@
 $setting=$this->db->get('setting')->row();
 
 $uri = $this->uri->segment(1);
+$slug = $this->uri->segment(2);
 $table = $uri;
 
 ?>
@@ -131,10 +132,14 @@ $table = $uri;
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1><?= $maintenance->nama_maintenance ?></h1>
+                                    <?php
+                                    $datamaintenance=$this->db->get_where($table,['link_maintenance'=>$slug])->row();
+
+                                    ?>
+                                    <h1><?= $datamaintenance->nama_maintenance ?></h1>
                                     <hr>
                                     <p>
-                                    <?= $maintenance->deskripsi_maintenance ?>
+                                    <?= $datamaintenance->deskripsi_maintenance ?>
                                     </p>
                                 </div>
                             </div>

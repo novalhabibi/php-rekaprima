@@ -2,6 +2,7 @@
 $setting=$this->db->get('setting')->row();
 
 $uri = $this->uri->segment(1);
+$slug = $this->uri->segment(2);
 $table = $uri;
 
 ?>
@@ -131,10 +132,14 @@ $table = $uri;
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1><?= $training->nama_training ?></h1>
+                                    <?php
+                                    $datatraining=$this->db->get_where($table,['link_training'=>$slug])->row();
+
+                                    ?>
+                                    <h1><?= $datatraining->nama_training ?></h1>
                                     <hr>
                                     <p>
-                                    <?= $training->deskripsi_training ?>
+                                    <?= $datatraining->deskripsi_training ?>
                                     </p>
                                 </div>
                             </div>

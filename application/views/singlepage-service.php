@@ -2,6 +2,8 @@
 $setting=$this->db->get('setting')->row();
 
 $uri = $this->uri->segment(1);
+$slug = $this->uri->segment(2);
+
 $table = $uri;
 
 ?>
@@ -131,10 +133,14 @@ $table = $uri;
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1><?= $service->nama_service ?></h1>
+                                    <?php
+                                    $dataservice=$this->db->get_where($table,['link_service'=>$slug])->row();
+
+                                    ?>
+                                    <h1><?= $dataservice->nama_service ?></h1>
                                     <hr>
                                     <p>
-                                    <?= $service->deskripsi_service ?>
+                                    <?= $dataservice->deskripsi_service ?>
                                     </p>
                                 </div>
                             </div>
