@@ -55,6 +55,8 @@ $route['sejarah'] = 'overview/sejarah';
 $route['contact'] = 'overview/contact';
 $route['visimisi'] = 'overview/visimisi';
 $route['smart'] = 'overview/smart';
+$route['management'] = 'overview/management';
+$route['allnews'] = 'overview/allnews';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -121,6 +123,7 @@ $route['news/hapus/(:any)']='NewsController/hapus';
 $route['news/simpan']='NewsController/simpan';
 $route['news/update']='NewsController/update';
 $route['dashboard/news/edit/(:any)']='NewsController/edit';
+$route['news/(:any)']='NewsController/show';
 // ENd News
 
 

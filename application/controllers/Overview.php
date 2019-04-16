@@ -32,4 +32,14 @@ class Overview extends CI_Controller {
         $this->load->view('smart');
     }
 
+    public function management()
+    {
+        $this->load->view('management');
+    }
+
+    public function allnews()
+    {
+        $this->load->view('allnews');
+    }
+
 }

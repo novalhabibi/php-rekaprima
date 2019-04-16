@@ -69,6 +69,18 @@ class NewsModel extends CI_Model
         return $this->db->get_where($this->_table,['id'=>$id])->row();
     }
 
+    public function getBySlug($slug)
+    {
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        $this->db->join($this->_table2,"$this->_table2.id_admin=$this->_table.id_admin");
+        $this->db->where('slug',$slug);
+        
+        // return $this->db->get_where($this->_table,['slug'=>$slug])->row();
+
+        return $query = $this->db->get()->row();
+    }
+
 
     public function simpan()
     {

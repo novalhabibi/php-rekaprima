@@ -20,10 +20,16 @@ class NewsController extends CI_Controller
         $data['news']= $this->newsmodel->getAllJoin();
         $this->load->view('admin/news/index',$data);
 
-        // $data['setting'] = $this->db->get('setting')->row();
+    }
 
-        // $data['_news']= $this->newsmodel->getById($id);
-        // $this->load->view('admin/newss/s/index',$data);
+    public function show()
+    {
+        $slug=$this->uri->segment(2);
+
+        $data['berita']=$this->newsmodel->getBySlug($slug);
+        $data['news']=$this->newsmodel->getAll();
+        $this->load->view('single-news',$data);
+
     }
 
     public function tambah()

@@ -228,15 +228,26 @@ $newspertama=$this->db->get('news')->row();
                     </div>
                 </div>
                 <ul class="history col-md-6">
+                <?php
+                $services = $this->db->get('services')->result();
+                $no=1;
+                foreach ($services as $service) {
+                $no;
+                ?>
                     <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0"
                         data-translatex="-200">
                         <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
                             <div class="box-content">
-                                <h4 class="heading-primary" style="margin-top: -10px"><strong>1</strong></h4>
-                                <p><strong>Maintenance of OCC & SCADA System</strong></p>
+                                <h4 class="heading-primary" style="margin-top: -10px"><strong><?= $no ?></strong></h4>
+                                <p><strong><?= $service->nama_service ?></strong></p>
                             </div>
                         </div>
                     </li>
+                <?php
+                $no++;
+                }
+                ?>
+<!-- 
                     <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0"
                         data-translatex="-200" style="margin-top: -25px">
                         <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
@@ -245,8 +256,8 @@ $newspertama=$this->db->get('news')->row();
                                 <p><strong>Maintenance of Electric Propulsion System</strong></p>
                             </div>
                         </div>
-                    </li>
-                    <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0"
+                    </li> -->
+                    <!-- <li class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0"
                         data-translatex="-200" style="margin-top: -25px">
                         <div class="featured-box" style="margin-left: 0px; min-height:0px; margin-bottom: -10px">
                             <div class="box-content">
@@ -281,7 +292,9 @@ $newspertama=$this->db->get('news')->row();
                                 <p><strong>Maintenance of Telecommunication System</strong></p>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
+
+
                 </ul>
                 <div class="col-md-6">
                     <div class="animateme scrollme" data-when="enter" data-from="0.3" data-to="0.05" data-opacity="0"

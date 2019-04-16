@@ -52,7 +52,7 @@
                           <div class="col-md-3">
                             <span class="dropdown-mega-sub-title"><h4>Pemimpin Kami</h4></span>
                               <ul class="dropdown-mega-sub-nav">
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Management</a></li>
+                                <li><a href="<?php echo base_url('management') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Management</a></li>
                                 <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Dewan Komisaris</a></li>
                               </ul>
                           </div>
@@ -172,7 +172,7 @@
                 </ul>
               </li>
               <li class="">
-                <a href="#">News</a>
+                <a href="<?php echo base_url('allnews') ?>">News</a>
               </li>
               <li class="">
                 <a href="<?php echo base_url('contact') ?>">Contact</a>
