@@ -120,7 +120,7 @@ $table = "projects";
                                     
                                     ?>
                                     <li><a data-hash="" data-hash-offset="0"
-                                            href="<?= site_url('projects/') ?><?= $project->link_project ?>"><?= $project->nama_project ?></a>
+                                            href="<?= site_url('kat/') ?><?= $kategori->nama_kategori_project ?>/<?= $project->link_project ?>"><?= $project->nama_project ?></a>
                                     </li>
                                     <?php
                                     }
