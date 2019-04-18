@@ -54,6 +54,7 @@ $route['aboutus'] = 'overview/aboutus';
 $route['sejarah'] = 'overview/sejarah';
 $route['contact'] = 'overview/contact';
 $route['visimisi'] = 'overview/visimisi';
+$route['organisasi'] = 'overview/organisasi';
 $route['smart'] = 'overview/smart';
 $route['management'] = 'overview/management';
 $route['allnews'] = 'overview/allnews';

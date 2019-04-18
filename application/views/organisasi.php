@@ -89,24 +89,12 @@ $setting=$this->db->get('setting')->row();
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-                                    <h4 style="text-align: center;"><strong>VISI</strong></h4>
-                                    <p style="text-align: center;">
+                            
+                                    <h4 style="text-align: center;"><strong>Organisais</strong></h4>
+                             
                                     <!-- Menjadi Perusahaan Operator & Maintenance Perkeretaapian Nasional yang Handal di Tahnun 2022 -->
-                                    <?= $setting->visi ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-                                    <h4 style="text-align: center;"><strong>MISI</strong></h4>
-                                    <p style="text-align: center;">
-                                    <!-- Membangun Rekaprima Menjadi entitas bisnis baru yang dapat menjadi mitra bisnis terdepan dari pemilik infrastruktur perkeretaapian dalam meningkatkan produktifitas dan mobilitas masyarakat Indonesia dengan pengelolaan Operasi dan perawatan berkelas Internasional dan handal -->
-                                    <?= $setting->misi ?>
-                                    </p>
-                                </div>
-                            </div>
+                                    <img src="<?= site_url() ?><?= $setting->struktur_organisasi ?>" alt="">
+                             
                         </div>
                     </div>
                 </div>

@@ -28,6 +28,10 @@ class Overview extends CI_Controller {
         $this->load->view('visimisi');
     }
 
+    public function organisasi(){
+        $this->load->view('organisasi');
+    }
+
     public function smart(){
         $this->load->view('smart');
     }

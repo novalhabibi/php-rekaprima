@@ -46,7 +46,7 @@
                                 <li><a href="<?php echo base_url('sejarah') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Sejarah Len Rekaprima Semesta</a></li>
                                 <li><a href="<?php echo base_url('visimisi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Visi &amp; Misi</a></li>
                                 <li><a href="<?php echo base_url('smart') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Nilai-nilai Perusahaan (SMART)</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i> Struktur Organisasi</a></li>
+                                <li><a href="<?php echo base_url('organisasi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Struktur Organisasi</a></li>
                               </ul>
                           </div>
                           <div class="col-md-3">
