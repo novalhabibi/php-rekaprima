@@ -87,7 +87,43 @@
                                                 <td><?= $project->nama_project ?> </td>
                                                 <td><?= $project->nama_kategori_project ?> </td>
                                                 <td>
-<a href="<?= base_url() ?><?= $project->gambar_project ?>" data-toggle="lightbox" data-title="<?= $project->nama_project ?>" data-footer="">Lihat gambar</a>
+                                                    <a href="<?= base_url() ?><?= $project->gambar_project ?>" data-toggle="lightbox" data-title="<?= $project->nama_project ?>" data-footer="">Lihat gambar</a>
+                                                    
+                                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#exampleModal<?= $project->id_project ?>">
+                                                    tambah gambar
+                                                    </button>
+                                                    <!-- Modal Tambah Gambar-->
+                                                    <div class="modal fade" id="exampleModal<?= $project->id_project ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Gambar</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?= site_url('project/tambahgambar') ?>" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="id_project" value="<?= $project->id_project ?>">
+                                                                <div class="form-group">
+                                                                    <label for="gambar">Upload gambar</label>
+                                                                    <input type="file" name="gambar" accept="image/*"  class="form-control">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="deskripsi_gambar">Deskrpsi gambar</label>
+                                                                    <textarea class="form-control" name="deskripsi_gambar" id="deskripsi_gambar" cols="30" rows="10"></textarea>
+                                                                </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="reset" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary btn-sm"  >Save changes</button>
+                                                        </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <!-- End Modal Tambah Gambar-->
                                                 </td>
                                                 <td><?= substr($project->deskripsi_project,0,10) ?> </td>
                                                 <td><?= $project->link_project ?> </td>

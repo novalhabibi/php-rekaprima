@@ -82,6 +82,7 @@ $route['projek/hapus/(:any)']='ProjectController/hapus';
 $route['projek/simpan']='ProjectController/simpan';
 $route['projek/update']='ProjectController/update';
 $route['dashboard/projek/edit/(:any)']='ProjectController/edit';
+$route['project/tambahgambar']='ProjectController/tambahgambar';
 // ENd Projek 
 
 // Maintenance 

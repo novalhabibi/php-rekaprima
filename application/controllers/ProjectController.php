@@ -8,6 +8,7 @@ class ProjectController extends CI_Controller
         parent:: __construct();
         $this->load->library('form_validation');
         $this->load->model('projectmodel');
+        $this->load->model('gambarmodel');
         
         
         
@@ -18,6 +19,7 @@ class ProjectController extends CI_Controller
         // echo "ini";
         $data['setting'] = $this->db->get('setting')->row();
         $data['projects']= $this->projectmodel->getAllJoin();
+        
         $this->load->view('admin/projects/index',$data);
 
         // $data['setting'] = $this->db->get('setting')->row();
@@ -52,15 +54,43 @@ class ProjectController extends CI_Controller
         
     }
 
+    public function tambahgambar()
+    {
+        if ($this->session->has_userdata('logged_in') == FALSE) {
+            redirect('auth/login');
+        }
+        
+        $this->form_validation->set_rules('deskripsi_gambar', 'Deskripsi Gambar', 'trim|required|min_length[5]');
+        
+        if ($this->form_validation->run() === FALSE)
+        {
+            $data['setting'] = $this->db->get('setting')->row();
+            $this->load->view('admin/projects/tambah',$data);
+
+        }
+        else
+        {
+            $this->gambarmodel->simpan();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            
+            redirect('dashboard/projek');
+        }
+        
+    }
+
+
+
     public function edit()
     {
         if ($this->session->has_userdata('logged_in') == FALSE) {
             redirect('auth/login');
         }
         $id = $this->uri->segment(4);
+        $id_project = $this->uri->segment(4);
         $data['setting'] = $this->db->get('setting')->row();
         // $data['_projects']= $this->projectmodel->getAll();
         $data['project']= $this->projectmodel->getById($id);
+        $data['gambars']= $this->gambarmodel->getById($id_project);
         $this->load->view('admin/projects/edit',$data);
     }
 
