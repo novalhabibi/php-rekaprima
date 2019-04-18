@@ -2,12 +2,15 @@
 $setting=$this->db->get('setting')->row();
 
 $uri = $this->uri->segment(2);
+$slug = $this->uri->segment(3);
 $table = "projects";
 
- $id_kategori_project= $kat->id_kategori_project;
+$id_kategori_project= $kat->id_kategori_project;
 
 
- $kategori=$this->db->get_where('kategori_projects',['id_kategori_project'=>$id_kategori_project])->row();
+$kategori=$this->db->get_where('kategori_projects',['id_kategori_project'=>$id_kategori_project])->row();
+$project1=$this->db->get_where($table,['link_project'=>$slug])->row();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -135,12 +138,37 @@ $table = "projects";
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1><?= $project->nama_project ?></h1>
+                                    <h1><?= $project1->nama_project ?></h1>
                                     <hr>
                                     <p>
-                                    <?= $project->deskripsi_project ?>
+                                        <?= $project1->deskripsi_project ?>
                                     </p>
                                 </div>
+
+                            </div>
+                            <div class="row mt-md mb-xl">
+                            <?php
+                            $gambars=$this->db->get_where('gambar',['id_project'=>$project1->id_project])->result();
+                            foreach ($gambars as $gambar) {
+                            ?>
+                                <div class="col-md-3">
+                                    <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-when="enter"
+                                        data-from="0.5" data-to="0" data-opacity="0" data-translatex="-200">
+                                        <div class="thumb-info-wrapper"><img
+                                                src="<?php echo base_url() ?><?= $gambar->gambar ?>"
+                                                class="img-responsive" /></div>
+                                        <div class="thumb-info-caption custom-box-shadow">
+                                            <div class="thumb-info-caption-text">
+                                                <p class="justify"><?= $gambar->deskripsi_gambar ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                                
+
                             </div>
                         </div>
                     </div>

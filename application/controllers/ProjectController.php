@@ -141,4 +141,17 @@ class ProjectController extends CI_Controller
         redirect($_SERVER['HTTP_REFERER']);
 
     }
+
+    public function hapusgambar()
+    {
+        if ($this->session->has_userdata('logged_in') == FALSE) {
+            redirect('auth/login');
+        }
+        echo $id = $this->uri->segment(3);
+        $this->gambarmodel->hapus($id);
+        $this->session->set_flashdata('success', 'Berhasil dihapus');
+        
+        redirect($_SERVER['HTTP_REFERER']);
+
+    }
 }

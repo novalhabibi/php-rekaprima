@@ -147,8 +147,8 @@
                         </button>
                         <tr>
                             <th width="20%">Gambar</th>
-                            <th>Deskrpis</th>
-                            <th>Aksi</th>
+                            <th width="50%">Deskrpis</th>
+                            <th width="20%">Aksi</th>
                         </tr>
                         <?php
                         foreach ($gambars as $gambar) {
@@ -160,7 +160,11 @@
                                 <img src="<?= site_url() ?><?= $gambar->gambar ?>" width="100%" alt="">
                             </td>
                             <td><?= $gambar->deskripsi_gambar ?></td>
-                            <td>hapus</td>
+                            <td>
+                            <a href="#" onclick="deleteConfirm('<?= site_url('projek/hapusgambar/'.$gambar->id_gambar) ?>')" data-toggle="modal" data-target="#hapus" class="btn btn-danger btn-xs">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                            </td>
                         </tr>
                         <?php
                         }

@@ -356,59 +356,69 @@ $newspertama=$this->db->get('news')->row();
                     </div>
                 </div>
                 <div class="row mt-md mb-xl">
+                <!-- dari Maintenance -->
+                <?php
+                $this->db->order_by('id_maintenance', 'DESC');
+                $frommaintenances = $this->db->get('maintenances')->row();
+                ?>
                     <div class="col-md-4">
                         <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-when="enter" data-from="0.5"
                             data-to="0" data-opacity="0" data-translatex="-200">
                             <div class="thumb-info-wrapper"><img
-                                    src="<?php echo base_url('assets/media/image/slider/Soetta-LRS.jpg') ?>"
+                                    src="<?php echo base_url() ?><?= $frommaintenances->gambar_maintenance ?>"
                                     class="img-responsive" /></div>
                             <div class="thumb-info-caption custom-box-shadow">
                                 <div class="thumb-info-caption-text">
-                                    <h4 class="text-center"><a href="#" class="text-color-dark"> Skytrain</a></h4>
-                                    <p class="justify">Skytrain Bandara Soekarno Hatta</p>
+                                    <h4 class="text-center"><a href="<?= site_url('maintenances/') ?><?= $frommaintenances->link_maintenance ?>" class="text-color-dark"><?= $frommaintenances->nama_maintenance ?></a></h4>
+                                    <p class="justify"><?= substr($frommaintenances->deskripsi_maintenance,50,200) ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-from="0.5" data-to="0"
-                            data-crop="false" data-opacity="0" data-translatey="200">
-                            <div class="thumb-info-wrapper"><img
-                                    src="<?php echo base_url('assets/media/image/slider/N.jpg') ?>"
-                                    class="img-responsive" /></div>
-                            <div class="thumb-info-caption custom-box-shadow">
-                                <div class="thumb-info-caption-text">
-                                    <h4 class="text-center"><a href="#" class="text-color-dark"> Interlocking System
-                                        </a></h4>
-                                    <p class="justify">Len Interlocking System (SIL) is a product of PLC based
-                                        Interlocking system developed by PT Len Industri.SIL is used as Interlocking
-                                        Processor to control outdoor equipment operation such as light signal, track
-                                        circuit, point machine, etc. SIL is developed as an alternative solution for
-                                        railway interlocking system especially for Indonesian railway. SIL operation
-                                        stresses the importance of safety, reliability, availability as well as easy
-                                        maintenance.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- End dari Maintenance -->
+
+                <!-- dari Services -->
+                <?php
+                $this->db->order_by('id_service', 'DESC');
+                $fromservice = $this->db->get('services')->row();
+                ?>
                     <div class="col-md-4">
                         <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-when="enter" data-from="0.5"
-                            data-to="0" data-opacity="0" data-translatex="200">
+                            data-to="0" data-opacity="0" data-translatex="-200">
                             <div class="thumb-info-wrapper"><img
-                                    src="<?php echo base_url('assets/media/image/slider/CBI-3.jpg') ?>"
+                                    src="<?php echo base_url() ?><?= $fromservice->gambar_service ?>"
                                     class="img-responsive" /></div>
                             <div class="thumb-info-caption custom-box-shadow">
                                 <div class="thumb-info-caption-text">
-                                    <h4 class="text-center"><a href="" class="text-color-dark"> Computer Base
-                                            Interlocking </a></h4>
-                                    <p class="justify">Len Computer Base Interlocking System (CBI) is a product
-                                        developed by PT Len Industri (Persero). CBI is used as Interlocking System to
-                                        control outdoor equipment operation such as light signal, track circuit, point
-                                        machine, etc all in Computer Base System.</p>
+                                    <h4 class="text-center"><a href="<?= site_url('services/') ?><?= $fromservice->link_service ?>" class="text-color-dark"><?= $fromservice->nama_service ?></a></h4>
+                                    <p class="justify"><?= substr($fromservice->deskripsi_service,50,200) ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                <!-- End dari Services -->
+                
+                <!-- dari Training -->
+                <?php
+                $this->db->order_by('id_training', 'DESC');
+                $fromtraining = $this->db->get('trainings')->row();
+                ?>
+                    <div class="col-md-4">
+                        <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-when="enter" data-from="0.5"
+                            data-to="0" data-opacity="0" data-translatex="-200">
+                            <div class="thumb-info-wrapper"><img
+                                    src="<?php echo base_url() ?><?= $fromtraining->gambar_training ?>"
+                                    class="img-responsive" /></div>
+                            <div class="thumb-info-caption custom-box-shadow">
+                                <div class="thumb-info-caption-text">
+                                    <h4 class="text-center"><a href="<?= site_url('trainings/') ?><?= $fromtraining->link_training ?>" class="text-color-dark"><?= $fromtraining->nama_training ?></a></h4>
+                                    <p class="justify"><?= substr($fromtraining->deskripsi_training,50,200) ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- End dari Training -->
+
                 </div>
             </div>
             <!---------------------------------------------------------------------------------------------------->
