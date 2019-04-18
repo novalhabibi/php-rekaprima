@@ -113,8 +113,15 @@
                             <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Jangan biarkan kososng !
                             </div>
                         </div>
+
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+
                             <label for="validationCustom03">Video Perusahaan</label>
+                        <video width="100%" height="315px"
+                                poster="" controls>
+                                <source src="<?php echo base_url('./uploads/settings/') ?><?= $setting->video_perusahaan ?>"
+                                    type="video/mp4"></video>
+
                             <input type="hidden" name="video_lama" value="<?= $setting->video_perusahaan ?>" >
                             
                             <input type="file" name="video" accept="video/*" class="form-control" id="validationCustom03" >
@@ -128,7 +135,9 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                             <label for="struktur">Struktur Organisasi</label>
                             <input type="hidden" name="struktur_lama" value="<?= $setting->struktur_organisasi ?>" >
-                            <img src="<?= base_url() ?><?= $setting->struktur_organisasi ?>">
+                            
+                            <img src="<?= base_url() ?><?= $setting->struktur_organisasi ?>" class="img-fluid" alt="Responsive image">
+                            
                             <input type="file" name="struktur_organisasi" accept="image/*" class="form-control" id="struktur" >
                             <div class="valid-feedback"><i class="fas fa-info-circle"></i>
                                 Bagus! 

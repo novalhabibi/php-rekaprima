@@ -93,7 +93,7 @@ $setting=$this->db->get('setting')->row();
                                     <h4 style="text-align: center;"><strong>Organisais</strong></h4>
                              
                                     <!-- Menjadi Perusahaan Operator & Maintenance Perkeretaapian Nasional yang Handal di Tahnun 2022 -->
-                                    <img src="<?= site_url() ?><?= $setting->struktur_organisasi ?>" alt="">
+                                    <img class="img-fluid" alt="Responsive image" src="<?= site_url() ?><?= $setting->struktur_organisasi ?>">
                              
                         </div>
                     </div>
