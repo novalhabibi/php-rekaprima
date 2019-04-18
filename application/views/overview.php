@@ -2,7 +2,7 @@
 $setting=$this->db->get('setting')->row();
 
 
-$sliders=$this->db->get_where('slider', array('status' => True),5)->result();
+$sliders=$this->db->order_by('id', 'DESC')->get_where('slider', array('status' => True),5)->result();
 
 
 $this->db->order_by('id', 'DESC');
