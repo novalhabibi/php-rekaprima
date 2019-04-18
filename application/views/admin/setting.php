@@ -114,6 +114,18 @@
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="validationCustom03">Video Perusahaan</label>
+                            <input type="hidden" name="video_lama" value="<?= $setting->video_perusahaan ?>" >
+                            
+                            <input type="file" name="video" accept="video/*" class="form-control" id="validationCustom03" >
+                            <div class="valid-feedback"><i class="fas fa-info-circle"></i>
+                                Bagus! 
+                            </div>
+                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Jangan biarkan kososng !
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                             <label for="struktur">Struktur Organisasi</label>
                             <input type="hidden" name="struktur_lama" value="<?= $setting->struktur_organisasi ?>" >
                             <img src="<?= base_url() ?><?= $setting->struktur_organisasi ?>">

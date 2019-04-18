@@ -322,7 +322,7 @@ $newspertama=$this->db->get('news')->row();
                             data-translatex="-200">
                             <video width="100%" height="315px"
                                 poster="<?php echo base_url('assets/img/poster_rekaprima.jpg') ?>" controls>
-                                <source src="<?php echo base_url('assets/video/Video_Compro_Rekaprima.mp4') ?>"
+                                <source src="<?php echo base_url('./uploads/settings/') ?><?= $setting->video_perusahaan ?>"
                                     type="video/mp4"></video>
                         </div>
                     </div>

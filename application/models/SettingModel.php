@@ -11,6 +11,7 @@ class SettingModel extends CI_Model
     public $logo;
     public $visi;
     public $misi;
+    public $video_perusahaan;
     public $struktur_organisasi;
     public $alamat;
     public $email;
@@ -78,6 +79,19 @@ class SettingModel extends CI_Model
 
     }
 
+    private function _uploadVideo()
+    {
+        $tujuan ="./uploads/settings/";
+        $config['upload_path']          = $tujuan;
+        $config['allowed_types']        = 'mp4|mkv';
+        $config['overwrite']        = TRUE;
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('video')) {
+            return $nama = $this->upload->data('file_name');
+        }
+        return "no-image.png";
+
+    }
 
 
     public function update()
@@ -97,6 +111,12 @@ class SettingModel extends CI_Model
             $this->logo = $this->_uploadGambarLogo();
         } else {
             $this->logo = $post["logo_lama2"];
+        }
+
+        if (!empty($_FILES["video"]["name"])) {
+            $this->video_perusahaan = $this->_uploadVideo();
+        } else {
+            $this->video_perusahaan = $post["video_lama"];
         }
 
         if (!empty($_FILES["struktur_organisasi"]["name"])) {
