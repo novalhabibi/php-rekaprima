@@ -59,7 +59,7 @@ if (validation_errors() == true) {
 if ($this->session->flashdata('error') == true) {
 ?>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+   <?php echo validation_errors(); ?>
 
 
     <a href="#" class="close" data-dismiss="alert" aria-label="Close">

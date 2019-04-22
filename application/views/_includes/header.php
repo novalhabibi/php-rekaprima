@@ -73,7 +73,7 @@
                         <div class="col-md-3">
                           <span class="dropdown-mega-sub-title"><h4>Maintenance</h4></span>
                             <ul class="dropdown-mega-sub-nav">
-                              <li><a href="<?php echo base_url('index.php/overview/signaling') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Signalling System</a></li>
+                              
                               <?php
                               $data=$this->db->get('maintenances')->result();
                               foreach($data as $maintenance){

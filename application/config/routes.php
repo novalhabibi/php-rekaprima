@@ -67,6 +67,15 @@ $route['auth/login']='AuthController/login';
 $route['auth/ceklogin']='AuthController/ceklogin';
 $route['auth/logout']='AuthController/logout';
 
+// Admin
+$route['dashboard/admin/']='AdminController';
+$route['admin/hapus/(:any)']='AdminController/hapus';
+$route['admin/simpan']='AdminController/simpan';
+$route['admin/update']='AdminController/update';
+$route['dashboard/admin/kategori/edit/(:any)']='AdminController/edit';
+$route['kat/(:any)/(:any)']='AdminController/show';
+// End Admin
+
 // Kategori Project
 $route['dashboard/projek/kategori']='KategoriProjectController';
 $route['projek/kategori/hapus/(:any)']='KategoriProjectController/hapus';

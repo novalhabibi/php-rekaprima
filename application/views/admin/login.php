@@ -35,7 +35,7 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><img class="logo-img" src="<?= base_url() ?>/assets/admin/assets/images/logo.png" alt="logo"><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><img class="logo-img" src="<?= base_url() ?>/uploads/settings/lrs-logo.png" alt="logo" width="80%"><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
                 <form action="<?= base_url('auth/ceklogin') ?>" method="post">
                     <div class="form-group">
@@ -47,13 +47,13 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
                 </form>
             </div>
-            <div class="card-footer bg-white p-0  ">
+            <!-- <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Create An Account</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Forgot Password</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
   
